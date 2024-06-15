@@ -2,7 +2,7 @@ def work_with_phonebook():
 
     choice = show_menu()
 
-    phone_book = read_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt")
+    phone_book = read_txt("phone.txt")
 
     while (choice != 7):
 
@@ -20,13 +20,13 @@ def work_with_phonebook():
             last_name = input('lastname ')
             new_number = input('new  number ')
             change_number(phone_book, last_name, new_number)
-            write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
+            write_txt("phone.txt", phone_book)
 	    	
         elif choice == 4:
 
             lastname = input('lastname ')
             delete_by_lastname(phone_book, lastname)
-            write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
+            write_txt("phone.txt", phone_book)
 
         elif choice == 5:
 
@@ -36,7 +36,7 @@ def work_with_phonebook():
         elif choice == 6:
 
             add_user(phone_book)
-            write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
+            write_txt("phone.txt", phone_book)
 
         choice = show_menu()
     
@@ -164,5 +164,7 @@ def add_user(phone_book):
     record = dict(zip(fields, line))
 
     phone_book.append(record)
+
+
 
 work_with_phonebook()
