@@ -19,7 +19,8 @@ def work_with_phonebook():
 
             last_name = input('lastname ')
             new_number = input('new  number ')
-            print(change_number(phone_book, last_name, new_number))
+            change_number(phone_book, last_name, new_number)
+            write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
 	    	
         elif choice == 4:
 
@@ -35,7 +36,7 @@ def work_with_phonebook():
 
             user_data = input('new data')
             add_user(phone_book, user_data)
-            write_txt('phone.txt', phone_book)
+            write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
 
         choice = show_menu()
     
@@ -116,7 +117,12 @@ def find_by_lastname(phone_book, last_name):
 
 
 def change_number(phone_book, last_name, new_number):
-    pass
+
+    for item in phone_book:
+        
+        if last_name == item['Фамилия:']:
+
+            item['Телефон:'] = ' ' + new_number
 
 
 def delete_by_lastname(phone_book, lastname):
