@@ -13,7 +13,7 @@ def work_with_phonebook():
         elif choice == 2:
 
             last_name = input('lastname ')
-            print(find_by_lastname(phone_book, last_name))
+            print(*find_by_lastname(phone_book, last_name))
 
         elif choice == 3:
 
@@ -101,16 +101,23 @@ def print_result(phone_book):
 
 def find_by_lastname(phone_book, last_name):
     
+    result = list()
+
     for item in phone_book:
         
         if last_name == item['Фамилия:']:
+
             for i in item:
-                print(i, item[i])
+                result.append(i)
+                result.append(item[i])
+    
+    return result
 
 
 
 def change_number(phone_book, last_name, new_number):
     pass
+
 
 def delete_by_lastname(phone_book, lastname):
     pass
