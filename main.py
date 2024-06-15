@@ -25,11 +25,12 @@ def work_with_phonebook():
         elif choice == 4:
 
             lastname = input('lastname ')
-            print(delete_by_lastname(phone_book, lastname))
+            delete_by_lastname(phone_book, lastname)
+            write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
 
         elif choice == 5:
 
-            number=input('number ')
+            number = input('number ')
             print(find_by_number(phone_book,number))
 
         elif choice == 6:
@@ -126,7 +127,15 @@ def change_number(phone_book, last_name, new_number):
 
 
 def delete_by_lastname(phone_book, lastname):
-    pass
+    
+    index_to_delete = -1
+
+    for i in range(len(phone_book)):
+        if lastname == phone_book[i]['Фамилия:']:
+            index_to_delete = i
+    
+    if index_to_delete != -1:
+        phone_book.pop(index_to_delete)
 
 def find_by_number(phone_book, number):
     pass
