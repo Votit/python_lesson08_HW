@@ -152,6 +152,17 @@ def find_by_number(phone_book, number):
     return result
 
 def add_user(phone_book):
-    pass
+
+    fields = ['Фамилия:', 'Имя:', 'Телефон:', 'Описание:']
+    
+    name = ' ' + input('name ')
+    lastname = input('lastname ')
+    number = ' ' + input('number ')
+    description = ' ' + input('description ') + '\n'
+
+    line = [lastname, name, number, description]
+    record = dict(zip(fields, line))
+
+    phone_book.append(record)
 
 work_with_phonebook()
