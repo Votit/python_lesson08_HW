@@ -31,12 +31,11 @@ def work_with_phonebook():
         elif choice == 5:
 
             number = input('number ')
-            print(find_by_number(phone_book,number))
+            print(*find_by_number(phone_book,number))
 
         elif choice == 6:
 
-            user_data = input('new data')
-            add_user(phone_book, user_data)
+            add_user(phone_book)
             write_txt("c:/Users/titov/OneDrive/Desktop/GeekBrains/Python/lesson08_HW/phone.txt", phone_book)
 
         choice = show_menu()
@@ -136,11 +135,23 @@ def delete_by_lastname(phone_book, lastname):
     
     if index_to_delete != -1:
         phone_book.pop(index_to_delete)
+        
 
 def find_by_number(phone_book, number):
-    pass
+    
+    result = list()
 
-def add_user(phone_book, user_data):
+    for item in phone_book:
+        
+        if ' ' + number == item['Телефон:']:
+
+            for i in item:
+                result.append(i)
+                result.append(item[i])
+
+    return result
+
+def add_user(phone_book):
     pass
 
 work_with_phonebook()
